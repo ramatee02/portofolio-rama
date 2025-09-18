@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rama Teuku Ardiansyah - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+        }
+        
+        .dark-purple-bg {
+            background: linear-gradient(135deg, #2d1b69 0%, #11047a 100%);
+        }
+        
+        .purple-glow {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+        /* Text Animation Effects */
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid rgba(255, 255, 255, 0.75);
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0
+            }
+            to {
+                width: 100%
+            }
+        }
+        
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent
+            }
+            50% {
+                border-color: rgba(255, 255, 255, 0.75)
+            }
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLeft 1s ease forwards;
+        }
+        
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            animation: slideInRight 1s ease forwards;
+        }
+        
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .bounce-in {
+            opacity: 0;
+            transform: scale(0.3);
+            animation: bounceIn 1s ease forwards;
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .glow-text {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(139, 92, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.5), 0 0 30px rgba(139, 92, 246, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.8), 0 0 40px rgba(139, 92, 246, 0.8);
+            }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .pulse-text {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #10b981);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        @keyframes shake {
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            75% {
+                transform: translateX(5px);
+            }
+        }
+        
+        .rotate-in {
+            opacity: 0;
+            transform: rotate(-180deg);
+            animation: rotateIn 1s ease forwards;
+        }
+        
+        @keyframes rotateIn {
+            to {
+                opacity: 1;
+                transform: rotate(0deg);
+            }
+        }
+        
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0);
+            animation: zoomIn 0.8s ease forwards;
+        }
+        
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        /* Staggered animation delays */
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+        
+        .delay-600 {
+            animation-delay: 0.6s;
+        }
+        
+        .delay-700 {
+            animation-delay: 0.7s;
+        }
+        
+        .delay-800 {
+            animation-delay: 0.8s;
+        }
+        
+        .delay-900 {
+            animation-delay: 0.9s;
+        }
+        
+        .delay-1000 {
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-gray-900 to-purple-900 shadow-lg fixed w-full top-0 z-50 border-b border-purple-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-purple-300">Rama Teuku Ardiansyah</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-purple-200 hover:text-purple-400 transition">Beranda</a>
+                    <a href="#about" class="text-purple-200 hover:text-purple-400 transition">Tentang</a>
+                    <a href="#portfolio" class="text-purple-200 hover:text-purple-400 transition">Portfolio</a>
+                    <a href="#contact" class="text-purple-200 hover:text-purple-400 transition">Kontak</a>
+                    <button onclick="showAdminLogin()" class="text-purple-400 hover:text-purple-300 transition">
+                        <i class="fas fa-cog"></i> Admin
+                    </button>
+                </div>
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-gradient-to-r from-gray-900 to-purple-900 border-t border-purple-800">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-purple-200">Beranda</a>
+                <a href="#about" class="block py-2 text-purple-200">Tentang</a>
+                <a href="#portfolio" class="block py-2 text-purple-200">Portfolio</a>
+                <a href="#contact" class="block py-2 text-purple-200">Kontak</a>
+                <button onclick="showAdminLogin()" class="block py-2 text-purple-400">Admin</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white">
+            <div class="mb-8">
+                <div id="heroProfileImage" class="w-32 h-32 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden bounce-in">
+                    <i class="fas fa-user text-6xl text-gray-600"></i>
+                </div>
+                <h1 id="heroName" class="text-5xl md:text-7xl font-bold mb-4 typewriter glow-text">Rama Teuku Ardiansyah</h1>
+                <p id="heroTitle" class="text-xl md:text-2xl mb-8 opacity-90 fade-in-up delay-500 gradient-text">Web Developer & UI/UX Designer</p>
+                <p id="heroDescription" class="text-lg mb-8 max-w-2xl mx-auto opacity-80 fade-in-up delay-700">
+                    Passionate about creating beautiful and functional digital experiences
+                </p>
+                <div class="space-x-4 fade-in-up delay-900">
+                    <a href="https://drive.google.com/file/d/1ZjQQ1VM-f6dNI8PwXx38HiEH3zRNtfuQ/view?usp=drive_link" target="_blank" class="bg-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition shadow-lg purple-glow pulse-text">
+                        <i class="fab fa-google-drive mr-2"></i>Portfolio Drive
+                    </a>
+                    <a href="#contact" class="border-2 border-purple-300 text-purple-300 px-8 py-3 rounded-full font-semibold hover:bg-purple-300 hover:text-gray-900 transition shadow-lg float">
+                        Hubungi Saya
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-purple-100 mb-4 slide-in-left glow-text">Tentang Saya</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-400 to-indigo-400 mx-auto rounded-full zoom-in delay-300"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="slide-in-left delay-400">
+                    <h3 id="aboutTitle" class="text-2xl font-bold text-purple-100 mb-4 gradient-text">Creative Professional</h3>
+                    <p id="aboutDescription" class="text-purple-200 mb-6 leading-relaxed fade-in-up delay-600">
+                        Saya adalah seorang web developer dan UI/UX designer dengan pengalaman lebih dari 3 tahun dalam menciptakan solusi digital yang inovatif. Saya memiliki passion yang besar dalam mengembangkan aplikasi web yang tidak hanya fungsional, tetapi juga memberikan
+                        pengalaman pengguna yang luar biasa.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="fade-in-up delay-800">
+                            <h4 class="font-semibold text-purple-100">Email:</h4>
+                            <p id="aboutEmail" class="text-purple-300">rama.ardiansyah@email.com</p>
+                        </div>
+                        <div class="fade-in-up delay-900">
+                            <h4 class="font-semibold text-purple-100">Lokasi:</h4>
+                            <p id="aboutLocation" class="text-purple-300">Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div id="skillsContainer">
+                        <div class="bg-gray-800 p-6 rounded-xl text-center shadow-md hover:shadow-lg transition border border-purple-700 purple-glow bounce-in delay-500">
+                            <i class="fas fa-code text-3xl text-purple-400 mb-4 float"></i>
+                            <h4 class="font-semibold text-purple-100">Frontend</h4>
+                            <p class="text-purple-300 text-sm">React, Vue, HTML/CSS</p>
+                        </div>
+                        <div class="bg-gray-800 p-6 rounded-xl text-center shadow-md hover:shadow-lg transition border border-purple-700 purple-glow bounce-in delay-600">
+                            <i class="fas fa-server text-3xl text-indigo-400 mb-4 float delay-200"></i>
+                            <h4 class="font-semibold text-purple-100">Backend</h4>
+                            <p class="text-purple-300 text-sm">Node.js, PHP, Python</p>
+                        </div>
+                        <div class="bg-gray-800 p-6 rounded-xl text-center shadow-md hover:shadow-lg transition border border-purple-700 purple-glow bounce-in delay-700">
+                            <i class="fas fa-paint-brush text-3xl text-violet-400 mb-4 float delay-400"></i>
+                            <h4 class="font-semibold text-purple-100">Design</h4>
+                            <p class="text-purple-300 text-sm">Figma, Adobe XD</p>
+                        </div>
+                        <div class="bg-gray-800 p-6 rounded-xl text-center shadow-md hover:shadow-lg transition border border-purple-700 purple-glow bounce-in delay-800">
+                            <i class="fas fa-mobile-alt text-3xl text-blue-400 mb-4 float delay-600"></i>
+                            <h4 class="font-semibold text-purple-100">Mobile</h4>
+                            <p class="text-purple-300 text-sm">React Native, Flutter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-purple-100 mb-4 slide-in-right glow-text">Portfolio</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-400 to-indigo-400 mx-auto rounded-full zoom-in delay-300"></div>
+            </div>
+            <div id="portfolioContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio items will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-purple-100 mb-4 rotate-in glow-text">Hubungi Saya</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-400 to-indigo-400 mx-auto rounded-full zoom-in delay-300"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="slide-in-left delay-400">
+                    <h3 class="text-2xl font-bold text-purple-100 mb-6 gradient-text">Mari Berkolaborasi</h3>
+                    <p class="text-purple-200 mb-8 fade-in-up delay-600">
+                        Saya selalu terbuka untuk proyek baru dan kolaborasi menarik. Jangan ragu untuk menghubungi saya!
+                    </p>
+                    <div id="contactInfo" class="space-y-4">
+                        <div class="flex items-center fade-in-up delay-700">
+                            <i class="fas fa-envelope text-purple-400 w-6 pulse-text"></i>
+                            <span class="ml-4 text-purple-300">rama.ardiansyah@email.com</span>
+                        </div>
+                        <div class="flex items-center fade-in-up delay-800">
+                            <i class="fas fa-phone text-indigo-400 w-6 pulse-text"></i>
+                            <span class="ml-4 text-purple-300">+62 812-3456-7890</span>
+                        </div>
+                        <div class="flex items-center fade-in-up delay-900">
+                            <i class="fas fa-map-marker-alt text-violet-400 w-6 pulse-text"></i>
+                            <span class="ml-4 text-purple-300">Jakarta, Indonesia</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex space-x-4 fade-in-up delay-1000">
+                        <a href="#" class="text-purple-400 hover:text-purple-300 text-2xl transition float"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-indigo-400 hover:text-indigo-300 text-2xl transition float delay-200"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-violet-400 hover:text-violet-300 text-2xl transition float delay-400"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-purple-700 purple-glow slide-in-right delay-500">
+                    <form class="space-y-6">
+                        <div class="fade-in-up delay-600">
+                            <label class="block text-purple-200 font-semibold mb-2">Nama</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-700 border border-purple-600 rounded-lg focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500 transition text-purple-100">
+                        </div>
+                        <div class="fade-in-up delay-700">
+                            <label class="block text-purple-200 font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-gray-700 border border-purple-600 rounded-lg focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500 transition text-purple-100">
+                        </div>
+                        <div class="fade-in-up delay-800">
+                            <label class="block text-purple-200 font-semibold mb-2">Pesan</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-gray-700 border border-purple-600 rounded-lg focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500 transition text-purple-100"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition shadow-lg purple-glow pulse-text fade-in-up delay-900">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 to-purple-900 text-purple-200 py-8 border-t border-purple-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2024 Rama Teuku Ardiansyah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold mb-6 text-center">Admin Login</h3>
+            <form onsubmit="adminLogin(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-semibold mb-2">Username</label>
+                    <input type="text" id="adminUsername" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2">Password</label>
+                    <input type="password" id="adminPassword" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+                </div>
+                <div class="flex space-x-4">
+                    <button type="submit" class="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                        Login
+                    </button>
+                    <button type="button" onclick="hideAdminLogin()" class="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-400 transition">
+                        Batal
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="fixed inset-0 bg-gray-900 hidden z-50 overflow-y-auto">
+        <div class="bg-gradient-to-r from-purple-800 to-indigo-800 text-white p-4 border-b border-purple-700">
+            <div class="flex justify-between items-center">
+                <h2 class="text-2xl font-bold">Admin Panel</h2>
+                <button onclick="hideAdminPanel()" class="text-white hover:text-purple-200">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="p-6">
+            <!-- Admin Navigation -->
+            <div class="mb-8">
+                <div class="flex space-x-4 border-b border-purple-700">
+                    <button onclick="showAdminSection('profile')" class="admin-tab px-4 py-2 font-semibold text-purple-400 border-b-2 border-purple-400">
+                        Profil
+                    </button>
+                    <button onclick="showAdminSection('portfolio')" class="admin-tab px-4 py-2 font-semibold text-purple-300 hover:text-purple-400">
+                        Portfolio
+                    </button>
+                    <button onclick="showAdminSection('skills')" class="admin-tab px-4 py-2 font-semibold text-purple-300 hover:text-purple-400">
+                        Skills
+                    </button>
+                    <button onclick="showAdminSection('contact')" class="admin-tab px-4 py-2 font-semibold text-purple-300 hover:text-purple-400">
+                        Kontak
+                    </button>
+                </div>
+            </div>
+
+            <!-- Profile Section -->
+            <div id="adminProfile" class="admin-section">
+                <h3 class="text-xl font-bold mb-6 text-purple-100">Edit Profil</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Nama Lengkap</label>
+                        <input type="text" id="editName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Profesi</label>
+                        <input type="text" id="editTitle" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-gray-700 font-semibold mb-2">Deskripsi Hero</label>
+                        <textarea id="editHeroDescription" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Judul About</label>
+                        <input type="text" id="editAboutTitle" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="editEmail" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-gray-700 font-semibold mb-2">Deskripsi About</label>
+                        <textarea id="editAboutDescription" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Lokasi</label>
+                        <input type="text" id="editLocation" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Link Portfolio Drive</label>
+                        <input type="url" id="editPortfolioDrive" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-gray-700 font-semibold mb-2">Foto Profil</label>
+                        <div class="flex items-center space-x-4">
+                            <div id="profileImagePreview" class="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
+                                <i class="fas fa-user text-2xl text-gray-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <input type="file" id="profileImageInput" accept="image/*" class="hidden" onchange="previewProfileImage(this)">
+                                <button type="button" onclick="document.getElementById('profileImageInput').click()" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition">
+                                    Pilih Foto
+                                </button>
+                                <button type="button" onclick="removeProfileImage()" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition ml-2">
+                                    Hapus Foto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="saveProfile()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                    Simpan Profil
+                </button>
+            </div>
+
+            <!-- Portfolio Section -->
+            <div id="adminPortfolio" class="admin-section hidden">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold">Kelola Portfolio</h3>
+                    <button onclick="showAddPortfolio()" class="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
+                        <i class="fas fa-plus mr-2"></i>Tambah Project
+                    </button>
+                </div>
+                <div id="portfolioList" class="space-y-4">
+                    <!-- Portfolio items will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div id="adminSkills" class="admin-section hidden">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold">Kelola Skills</h3>
+                    <button onclick="showAddSkill()" class="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
+                        <i class="fas fa-plus mr-2"></i>Tambah Skill
+                    </button>
+                </div>
+                <div id="skillsList" class="grid md:grid-cols-2 gap-4">
+                    <!-- Skills will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div id="adminContact" class="admin-section hidden">
+                <h3 class="text-xl font-bold mb-6">Edit Informasi Kontak</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Email Kontak</label>
+                        <input type="email" id="editContactEmail" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Nomor Telepon</label>
+                        <input type="text" id="editContactPhone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Alamat</label>
+                        <input type="text" id="editContactAddress" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">LinkedIn URL</label>
+                        <input type="url" id="editLinkedin" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">GitHub URL</label>
+                        <input type="url" id="editGithub" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Instagram URL</label>
+                        <input type="url" id="editInstagram" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                    </div>
+                </div>
+                <button onclick="saveContact()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                    Simpan Kontak
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Portfolio Modal -->
+    <div id="portfolioModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg max-w-2xl w-full mx-4 max-h-screen overflow-y-auto">
+            <h3 id="portfolioModalTitle" class="text-2xl font-bold mb-6">Tambah Project</h3>
+            <form onsubmit="savePortfolioItem(event)">
+                <input type="hidden" id="portfolioId">
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Nama Project</label>
+                        <input type="text" id="portfolioName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Kategori</label>
+                        <input type="text" id="portfolioCategory" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-semibold mb-2">Deskripsi</label>
+                    <textarea id="portfolioDescription" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required></textarea>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-semibold mb-2">URL Project (opsional)</label>
+                    <input type="url" id="portfolioUrl" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2">Gambar Project</label>
+                    <div class="flex items-center space-x-4">
+                        <div id="portfolioImagePreview" class="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+                            <i class="fas fa-image text-2xl text-gray-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <input type="file" id="portfolioImageInput" accept="image/*" class="hidden" onchange="previewPortfolioImage(this)">
+                            <button type="button" onclick="document.getElementById('portfolioImageInput').click()" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition">
+                                Pilih Gambar
+                            </button>
+                            <button type="button" onclick="removePortfolioImage()" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition ml-2">
+                                Hapus Gambar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <button type="submit" class="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                        Simpan
+                    </button>
+                    <button type="button" onclick="hidePortfolioModal()" class="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-400 transition">
+                        Batal
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Skill Modal -->
+    <div id="skillModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg max-w-md w-full mx-4">
+            <h3 id="skillModalTitle" class="text-2xl font-bold mb-6">Tambah Skill</h3>
+            <form onsubmit="saveSkill(event)">
+                <input type="hidden" id="skillId">
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-semibold mb-2">Nama Skill</label>
+                    <input type="text" id="skillName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-semibold mb-2">Deskripsi</label>
+                    <input type="text" id="skillDescription" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2">Icon (Font Awesome class)</label>
+                    <input type="text" id="skillIcon" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" placeholder="fas fa-code" required>
+                </div>
+                <div class="flex space-x-4">
+                    <button type="submit" class="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                        Simpan
+                    </button>
+                    <button type="button" onclick="hideSkillModal()" class="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-400 transition">
+                        Batal
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Data storage
+        let portfolioData = [{
+            id: 1,
+            name: "E-Commerce Website",
+            category: "Web Development",
+            description: "Platform e-commerce modern dengan fitur lengkap dan desain responsif",
+            url: "https://example.com",
+            image: ""
+        }, {
+            id: 2,
+            name: "Mobile Banking App",
+            category: "Mobile App",
+            description: "Aplikasi mobile banking dengan UI/UX yang intuitif dan aman",
+            url: "",
+            image: ""
+        }, {
+            id: 3,
+            name: "Corporate Dashboard",
+            category: "Dashboard",
+            description: "Dashboard analytics untuk perusahaan dengan visualisasi data yang menarik",
+            url: "https://example.com",
+            image: ""
+        }];
+
+        let skillsData = [{
+            id: 1,
+            name: "Frontend",
+            description: "React, Vue, HTML/CSS",
+            icon: "fas fa-code"
+        }, {
+            id: 2,
+            name: "Backend",
+            description: "Node.js, PHP, Python",
+            icon: "fas fa-server"
+        }, {
+            id: 3,
+            name: "Design",
+            description: "Figma, Adobe XD",
+            icon: "fas fa-paint-brush"
+        }, {
+            id: 4,
+            name: "Mobile",
+            description: "React Native, Flutter",
+            icon: "fas fa-mobile-alt"
+        }];
+
+        let profileData = {
+            name: "Rama Teuku Ardiansyah",
+            title: "Web Developer & UI/UX Designer",
+            heroDescription: "Passionate about creating beautiful and functional digital experiences",
+            aboutTitle: "Creative Professional",
+            aboutDescription: "Saya adalah seorang web developer dan UI/UX designer dengan pengalaman lebih dari 3 tahun dalam menciptakan solusi digital yang inovatif. Saya memiliki passion yang besar dalam mengembangkan aplikasi web yang tidak hanya fungsional, tetapi juga memberikan pengalaman pengguna yang luar biasa.",
+            email: "rama.ardiansyah@email.com",
+            location: "Jakarta, Indonesia",
+            profileImage: "",
+            portfolioDrive: "https://drive.google.com/file/d/1ZjQQ1VM-f6dNI8PwXx38HiEH3zRNtfuQ/view?usp=drive_link"
+        };
+
+        let contactData = {
+            email: "rama.ardiansyah@email.com",
+            phone: "+62 812-3456-7890",
+            address: "Jakarta, Indonesia",
+            linkedin: "#",
+            github: "#",
+            instagram: "#"
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStoredData();
+            loadPortfolio();
+            loadSkills();
+            loadProfile();
+            loadContact();
+        });
+
+        function loadStoredData() {
+            // Load profile image from localStorage
+            const storedImage = localStorage.getItem('profileImage');
+            if (storedImage) {
+                profileData.profileImage = storedImage;
+            }
+
+            // Load other stored data if needed
+            const storedProfile = localStorage.getItem('profileData');
+            if (storedProfile) {
+                try {
+                    const parsedProfile = JSON.parse(storedProfile);
+                    profileData = {...profileData,
+                        ...parsedProfile
+                    };
+                } catch (e) {
+                    console.log('Error loading stored profile data');
+                }
+            }
+        }
+
+        // Navigation functions
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Image handling functions
+        function previewProfileImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imageData = e.target.result;
+                    // Update preview in admin panel
+                    const preview = document.getElementById('profileImagePreview');
+                    preview.innerHTML = `<img src="${imageData}" alt="Profile" class="w-full h-full object-cover">`;
+
+                    // Store image data
+                    profileData.profileImage = imageData;
+
+                    // Immediately update hero section
+                    updateHeroProfileImage();
+
+                    // Store in localStorage for persistence
+                    localStorage.setItem('profileImage', imageData);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function removeProfileImage() {
+            const preview = document.getElementById('profileImagePreview');
+            preview.innerHTML = '<i class="fas fa-user text-2xl text-gray-400"></i>';
+            document.getElementById('profileImageInput').value = '';
+            profileData.profileImage = '';
+
+            // Update hero section immediately
+            updateHeroProfileImage();
+
+            // Remove from localStorage
+            localStorage.removeItem('profileImage');
+        }
+
+        function updateHeroProfileImage() {
+            const heroImage = document.getElementById('heroProfileImage');
+            if (profileData.profileImage) {
+                heroImage.innerHTML = `<img src="${profileData.profileImage}" alt="Profile" class="w-full h-full object-cover">`;
+            } else {
+                heroImage.innerHTML = '<i class="fas fa-user text-6xl text-gray-600"></i>';
+            }
+        }
+
+        function previewPortfolioImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('portfolioImagePreview');
+                    preview.innerHTML = `<img src="${e.target.result}" alt="Portfolio" class="w-full h-full object-cover rounded-lg">`;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function removePortfolioImage() {
+            const preview = document.getElementById('portfolioImagePreview');
+            preview.innerHTML = '<i class="fas fa-image text-2xl text-gray-400"></i>';
+            document.getElementById('portfolioImageInput').value = '';
+        }
+
+        // Admin functions
+        function showAdminLogin() {
+            document.getElementById('adminLoginModal').classList.remove('hidden');
+        }
+
+        function hideAdminLogin() {
+            document.getElementById('adminLoginModal').classList.add('hidden');
+        }
+
+        function adminLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+
+            // Simple demo authentication
+            if (username === 'admin' && password === 'admin123') {
+                hideAdminLogin();
+                showAdminPanel();
+                loadAdminData();
+            } else {
+                alert('Username atau password salah!');
+            }
+        }
+
+        function showAdminPanel() {
+            document.getElementById('adminPanel').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideAdminPanel() {
+            document.getElementById('adminPanel').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function showAdminSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.admin-section').forEach(el => el.classList.add('hidden'));
+            // Remove active class from all tabs
+            document.querySelectorAll('.admin-tab').forEach(el => {
+                el.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+                el.classList.add('text-gray-600');
+            });
+
+            // Show selected section
+            document.getElementById('admin' + section.charAt(0).toUpperCase() + section.slice(1)).classList.remove('hidden');
+            // Add active class to selected tab
+            event.target.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+            event.target.classList.remove('text-gray-600');
+        }
+
+        function loadAdminData() {
+            // Load profile data
+            document.getElementById('editName').value = profileData.name;
+            document.getElementById('editTitle').value = profileData.title;
+            document.getElementById('editHeroDescription').value = profileData.heroDescription;
+            document.getElementById('editAboutTitle').value = profileData.aboutTitle;
+            document.getElementById('editAboutDescription').value = profileData.aboutDescription;
+            document.getElementById('editEmail').value = profileData.email;
+            document.getElementById('editLocation').value = profileData.location;
+            document.getElementById('editPortfolioDrive').value = profileData.portfolioDrive;
+
+            // Load profile image with fallback check
+            const preview = document.getElementById('profileImagePreview');
+            if (profileData.profileImage) {
+                preview.innerHTML = `<img src="${profileData.profileImage}" alt="Profile" class="w-full h-full object-cover">`;
+            } else {
+                // Check localStorage as backup
+                const storedImage = localStorage.getItem('profileImage');
+                if (storedImage) {
+                    profileData.profileImage = storedImage;
+                    preview.innerHTML = `<img src="${storedImage}" alt="Profile" class="w-full h-full object-cover">`;
+                } else {
+                    preview.innerHTML = '<i class="fas fa-user text-2xl text-gray-400"></i>';
+                }
+            }
+
+            // Load contact data
+            document.getElementById('editContactEmail').value = contactData.email;
+            document.getElementById('editContactPhone').value = contactData.phone;
+            document.getElementById('editContactAddress').value = contactData.address;
+            document.getElementById('editLinkedin').value = contactData.linkedin;
+            document.getElementById('editGithub').value = contactData.github;
+            document.getElementById('editInstagram').value = contactData.instagram;
+
+            loadPortfolioAdmin();
+            loadSkillsAdmin();
+        }
+
+        function saveSettings() {
+            // Apply logo
+            const navLogo = document.querySelector('.text-2xl.font-bold.text-gray-800');
+            if (siteSettings.logoImage) {
+                navLogo.innerHTML = `<img src="${siteSettings.logoImage}" alt="Logo" class="h-8 inline-block">`;
+            } else {
+                navLogo.textContent = profileData.name;
+            }
+
+            // Apply hero background
+            const heroSection = document.getElementById('home');
+            if (siteSettings.heroBackgroundImage) {
+                heroSection.style.backgroundImage = `url(${siteSettings.heroBackgroundImage})`;
+                heroSection.style.backgroundSize = 'cover';
+                heroSection.style.backgroundPosition = 'center';
+                heroSection.classList.remove('gradient-bg');
+            } else {
+                heroSection.style.backgroundImage = '';
+                heroSection.classList.add('gradient-bg');
+            }
+
+            // Apply about background
+            const aboutSection = document.getElementById('about');
+            if (siteSettings.aboutBackgroundImage) {
+                aboutSection.style.backgroundImage = `url(${siteSettings.aboutBackgroundImage})`;
+                aboutSection.style.backgroundSize = 'cover';
+                aboutSection.style.backgroundPosition = 'center';
+                aboutSection.classList.remove('bg-white');
+            } else {
+                aboutSection.style.backgroundImage = '';
+                aboutSection.classList.add('bg-white');
+            }
+
+            // Apply contact background
+            const contactSection = document.getElementById('contact');
+            if (siteSettings.contactBackgroundImage) {
+                contactSection.style.backgroundImage = `url(${siteSettings.contactBackgroundImage})`;
+                contactSection.style.backgroundSize = 'cover';
+                contactSection.style.backgroundPosition = 'center';
+                contactSection.classList.remove('bg-white');
+            } else {
+                contactSection.style.backgroundImage = '';
+                contactSection.classList.add('bg-white');
+            }
+
+            alert('Pengaturan website berhasil disimpan!');
+        }
+
+        // Profile functions
+        function saveProfile() {
+            profileData.name = document.getElementById('editName').value;
+            profileData.title = document.getElementById('editTitle').value;
+            profileData.heroDescription = document.getElementById('editHeroDescription').value;
+            profileData.aboutTitle = document.getElementById('editAboutTitle').value;
+            profileData.aboutDescription = document.getElementById('editAboutDescription').value;
+            profileData.email = document.getElementById('editEmail').value;
+            profileData.location = document.getElementById('editLocation').value;
+            profileData.portfolioDrive = document.getElementById('editPortfolioDrive').value;
+
+            // Save to localStorage for persistence
+            localStorage.setItem('profileData', JSON.stringify(profileData));
+
+            // If there's a profile image, make sure it's also saved
+            if (profileData.profileImage) {
+                localStorage.setItem('profileImage', profileData.profileImage);
+            }
+
+            loadProfile();
+            alert('Profil berhasil disimpan!');
+        }
+
+        function loadProfile() {
+            document.getElementById('heroName').textContent = profileData.name;
+            document.getElementById('heroTitle').textContent = profileData.title;
+            document.getElementById('heroDescription').textContent = profileData.heroDescription;
+            document.getElementById('aboutTitle').textContent = profileData.aboutTitle;
+            document.getElementById('aboutDescription').textContent = profileData.aboutDescription;
+            document.getElementById('aboutEmail').textContent = profileData.email;
+            document.getElementById('aboutLocation').textContent = profileData.location;
+
+            // Update profile image in hero section
+            const heroImage = document.getElementById('heroProfileImage');
+            if (profileData.profileImage) {
+                heroImage.innerHTML = `<img src="${profileData.profileImage}" alt="Profile" class="w-full h-full object-cover">`;
+            } else {
+                heroImage.innerHTML = '<i class="fas fa-user text-6xl text-gray-600"></i>';
+            }
+
+            // Update portfolio drive link
+            const driveLink = document.querySelector('a[href*="drive.google.com"]');
+            if (driveLink && profileData.portfolioDrive) {
+                driveLink.href = profileData.portfolioDrive;
+            }
+        }
+
+        // Contact functions
+        function saveContact() {
+            contactData.email = document.getElementById('editContactEmail').value;
+            contactData.phone = document.getElementById('editContactPhone').value;
+            contactData.address = document.getElementById('editContactAddress').value;
+            contactData.linkedin = document.getElementById('editLinkedin').value;
+            contactData.github = document.getElementById('editGithub').value;
+            contactData.instagram = document.getElementById('editInstagram').value;
+
+            loadContact();
+            alert('Informasi kontak berhasil disimpan!');
+        }
+
+        function loadContact() {
+            const contactInfo = document.getElementById('contactInfo');
+            contactInfo.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-envelope text-blue-600 w-6"></i>
+                    <span class="ml-4 text-gray-600">${contactData.email}</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-phone text-blue-600 w-6"></i>
+                    <span class="ml-4 text-gray-600">${contactData.phone}</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt text-blue-600 w-6"></i>
+                    <span class="ml-4 text-gray-600">${contactData.address}</span>
+                </div>
+            `;
+        }
+
+        // Portfolio functions
+        function loadPortfolio() {
+            const container = document.getElementById('portfolioContainer');
+            container.innerHTML = portfolioData.map((item, index) => `
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover zoom-in delay-${(index + 1) * 200}">
+                    <div class="h-48 ${item.image ? '' : 'bg-gradient-to-br from-blue-400 to-purple-500'} flex items-center justify-center overflow-hidden">
+                        ${item.image ? 
+                            `<img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">` :
+                            '<i class="fas fa-laptop-code text-6xl text-white float"></i>'
+                        }
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800 gradient-text">${item.name}</h3>
+                            <span class="text-sm bg-blue-100 text-blue-600 px-2 py-1 rounded pulse-text">${item.category}</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">${item.description}</p>
+                        ${item.url ? `<a href="${item.url}" class="text-blue-600 hover:text-blue-800 font-semibold glow-text">Lihat Project →</a>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadPortfolioAdmin() {
+            const container = document.getElementById('portfolioList');
+            container.innerHTML = portfolioData.map(item => `
+                <div class="bg-gray-50 p-4 rounded-lg flex justify-between items-center">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 ${item.image ? '' : 'bg-gray-300'} rounded-lg flex items-center justify-center overflow-hidden">
+                            ${item.image ? 
+                                `<img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">` :
+                                '<i class="fas fa-image text-gray-500"></i>'
+                            }
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">${item.name}</h4>
+                            <p class="text-gray-600 text-sm">${item.category}</p>
+                        </div>
+                    </div>
+                    <div class="space-x-2">
+                        <button onclick="editPortfolio(${item.id})" class="text-blue-600 hover:text-blue-800">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button onclick="deletePortfolio(${item.id})" class="text-red-600 hover:text-red-800">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showAddPortfolio() {
+            document.getElementById('portfolioModalTitle').textContent = 'Tambah Project';
+            document.getElementById('portfolioId').value = '';
+            document.getElementById('portfolioName').value = '';
+            document.getElementById('portfolioCategory').value = '';
+            document.getElementById('portfolioDescription').value = '';
+            document.getElementById('portfolioUrl').value = '';
+            document.getElementById('portfolioImageInput').value = '';
+            document.getElementById('portfolioImagePreview').innerHTML = '<i class="fas fa-image text-2xl text-gray-400"></i>';
+            document.getElementById('portfolioModal').classList.remove('hidden');
+        }
+
+        function editPortfolio(id) {
+            const item = portfolioData.find(p => p.id === id);
+            if (item) {
+                document.getElementById('portfolioModalTitle').textContent = 'Edit Project';
+                document.getElementById('portfolioId').value = item.id;
+                document.getElementById('portfolioName').value = item.name;
+                document.getElementById('portfolioCategory').value = item.category;
+                document.getElementById('portfolioDescription').value = item.description;
+                document.getElementById('portfolioUrl').value = item.url;
+                
+                // Load existing image
+                const preview = document.getElementById('portfolioImagePreview');
+                if (item.image) {
+                    preview.innerHTML = `<img src="${item.image}" alt="Portfolio" class="w-full h-full object-cover rounded-lg">`;
+                } else {
+                    preview.innerHTML = '<i class="fas fa-image text-2xl text-gray-400"></i>';
+                }
+                
+                document.getElementById('portfolioModal').classList.remove('hidden');
+            }
+        }
+
+        function deletePortfolio(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus project ini?')) {
+                portfolioData = portfolioData.filter(p => p.id !== id);
+                loadPortfolio();
+                loadPortfolioAdmin();
+            }
+        }
+
+        function savePortfolioItem(event) {
+            event.preventDefault();
+            const id = document.getElementById('portfolioId').value;
+            const name = document.getElementById('portfolioName').value;
+            const category = document.getElementById('portfolioCategory').value;
+            const description = document.getElementById('portfolioDescription').value;
+            const url = document.getElementById('portfolioUrl').value;
+            
+            // Get image from preview
+            const preview = document.getElementById('portfolioImagePreview');
+            const img = preview.querySelector('img');
+            const image = img ? img.src : '';
+
+            if (id) {
+                // Edit existing
+                const index = portfolioData.findIndex(p => p.id == id);
+                if (index !== -1) {
+                    portfolioData[index] = { id: parseInt(id), name, category, description, url, image };
+                }
+            } else {
+                // Add new
+                const newId = Math.max(...portfolioData.map(p => p.id), 0) + 1;
+                portfolioData.push({ id: newId, name, category, description, url, image });
+            }
+
+            loadPortfolio();
+            loadPortfolioAdmin();
+            hidePortfolioModal();
+        }
+
+        function hidePortfolioModal() {
+            document.getElementById('portfolioModal').classList.add('hidden');
+        }
+
+        // Skills functions
+        function loadSkills() {
+            const container = document.getElementById('skillsContainer');
+            container.innerHTML = skillsData.map(skill => `
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    ${skill.image ? 
+                        `<div class="w-12 h-12 mx-auto mb-4 rounded-lg overflow-hidden">
+                            <img src="${skill.image}" alt="${skill.name}" class="w-full h-full object-cover">
+                        </div>` :
+                        `<i class="${skill.icon} text-3xl text-blue-600 mb-4"></i>`
+                    }
+                    <h4 class="font-semibold text-gray-800">${skill.name}</h4>
+                    <p class="text-gray-600 text-sm">${skill.description}</p>
+                </div>
+            `).join('');
+        }
+
+        function loadSkillsAdmin() {
+            const container = document.getElementById('skillsList');
+            container.innerHTML = skillsData.map(skill => `
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="flex items-center">
+                            ${skill.image ? 
+                                `<div class="w-10 h-10 mr-3 rounded-lg overflow-hidden">
+                                    <img src="${skill.image}" alt="${skill.name}" class="w-full h-full object-cover">
+                                </div>` :
+                                `<i class="${skill.icon} text-2xl text-blue-600 mr-3"></i>`
+                            }
+                            <div>
+                                <h4 class="font-semibold text-gray-800">${skill.name}</h4>
+                                <p class="text-gray-600 text-sm">${skill.description}</p>
+                            </div>
+                        </div>
+                        <div class="space-x-2">
+                            <button onclick="editSkill(${skill.id})" class="text-blue-600 hover:text-blue-800">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button onclick="deleteSkill(${skill.id})" class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showAddSkill() {
+            document.getElementById('skillModalTitle').textContent = 'Tambah Skill';
+            document.getElementById('skillId').value = '';
+            document.getElementById('skillName').value = '';
+            document.getElementById('skillDescription').value = '';
+            document.getElementById('skillIcon').value = '';
+            document.getElementById('skillImageInput').value = '';
+            document.getElementById('skillImagePreview').innerHTML = '<i class="fas fa-image text-2xl text-gray-400"></i>';
+            document.getElementById('skillModal').classList.remove('hidden');
+        }
+
+        function editSkill(id) {
+            const skill = skillsData.find(s => s.id === id);
+            if (skill) {
+                document.getElementById('skillModalTitle').textContent = 'Edit Skill';
+                document.getElementById('skillId').value = skill.id;
+                document.getElementById('skillName').value = skill.name;
+                document.getElementById('skillDescription').value = skill.description;
+                document.getElementById('skillIcon').value = skill.icon;
+                
+                // Load existing image
+                const preview = document.getElementById('skillImagePreview');
+                if (skill.image) {
+                    preview.innerHTML = `<img src="${skill.image}" alt="Skill" class="w-full h-full object-cover rounded-lg">`;
+                } else {
+                    preview.innerHTML = '<i class="fas fa-image text-2xl text-gray-400"></i>';
+                }
+                
+                document.getElementById('skillModal').classList.remove('hidden');
+            }
+        }
+
+        function deleteSkill(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus skill ini?')) {
+                skillsData = skillsData.filter(s => s.id !== id);
+                loadSkills();
+                loadSkillsAdmin();
+            }
+        }
+
+        function saveSkill(event) {
+            event.preventDefault();
+            const id = document.getElementById('skillId').value;
+            const name = document.getElementById('skillName').value;
+            const description = document.getElementById('skillDescription').value;
+            const icon = document.getElementById('skillIcon').value;
+            
+            // Get image from preview
+            const preview = document.getElementById('skillImagePreview');
+            const img = preview.querySelector('img');
+            const image = img ? img.src : '';
+
+            if (id) {
+                // Edit existing
+                const index = skillsData.findIndex(s => s.id == id);
+                if (index !== -1) {
+                    skillsData[index] = { id: parseInt(id), name, description, icon, image };
+                }
+            } else {
+                // Add new
+                const newId = Math.max(...skillsData.map(s => s.id), 0) + 1;
+                skillsData.push({ id: newId, name, description, icon, image });
+            }
+
+            loadSkills();
+            loadSkillsAdmin();
+            hideSkillModal();
+        }
+
+        function hideSkillModal() {
+            document.getElementById('skillModal').classList.add('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML = "window.__CF$cv$params={r:'980d95bec624fd91',t:'MTc1ODE2NDM0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>
